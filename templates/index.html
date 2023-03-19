@@ -1,0 +1,107 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Image Classification</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<style>
+
+  h1 {
+    font-size: 50px;
+  } 
+  .side-left{
+  
+    height: 100%;
+    width: 65%;
+    float: left;
+  }
+  .side-right{
+
+    height: 100%;
+    width: 35%;
+    float: left;
+    background-color: rgba(3, 3, 3, 0.616);
+        
+            color: aliceblue;
+            border-radius: 10px;
+
+  }
+  .section-content{
+    height: 100%;
+    width: 100%;
+  }
+  body{
+    background-image: url('https://www.ims.fraunhofer.de/en/Core-Competence/Embedded-Software-and-AI/Computer-Vision/jcr:content/stage/stageParsys/stage_slide/image.img.jpg/1630138368381/ComputerVision.jpg')  ;
+    background-repeat: no-repeat;
+    background-size: cover;
+
+  }
+</style>
+<body>
+<div class="section-head">
+  <div class="container-fluid">
+    <h1  style="text-align: center;background-color: transparent;color: aliceblue;">Casting Classification</h1>
+      <marquee><h2 style="color: aliceblue;">Hello {{name2}}</h2></marquee>
+    
+    </div>
+</div>
+<div class="section-content">
+<div class="side-left">
+&nbsp;
+</div>
+<div class="side-right">
+<div class="container">
+        <br><br><br>
+    <p style="margin-left: 40px;">
+      Visual inspection is a non-destructive technique to detect flaws on  <br>casting
+products. It involves an inspector looking at each test piece  <br>with the naked eye 
+and then classifying the product as either <br> defective or OK based on his
+assessment. Due to its reliance on  <br>human factors, however, visual inspection is 
+prone to <br> misclassification and can be time-consuming.
+<br><br>&emsp; &emsp; &emsp; This project explores automation of visual inspection with  <br>computer vision. A 
+deep learning model called convolutional neural <br> networks (CNN) is created to 
+distinguish images of defective and  <br>non-defective castings.
+    </p>
+  <br><br>
+  <form class="form-horizontal" action="/predict" method="post" enctype="multipart/form-data">
+
+    <div class="form-group">
+      <label class="control-label col-sm-2" for="pwd">Upload Your Image :</label>
+      <div class="col-sm-10">          
+        <input type="file" class="form-control" placeholder="Hours Studied"  name="my_image" id="pwd"style="width:250px;background-color:transparent">
+      </div>
+    </div>
+
+    <div class="form-group">        
+      <div class="col-sm-offset-2 col-sm-10">
+        &emsp;&emsp;&emsp;&emsp;&emsp;&emsp;
+        <button type="submit" class="btn btn-success">Submit</button>
+      </div>
+    </div>
+  </form>
+
+
+</div>
+</div>
+</div>
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+
+
+
+

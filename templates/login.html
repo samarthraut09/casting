@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Page</title>
+    <link rel="stylesheet" href="style.css">
+    <link href='https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css' rel='stylesheet'>
+</head>
+<style>
+
+* {  margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+
+}
+
+body {
+    background: #020410;
+}
+
+.header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding: 25px 12.5%;
+    background: transparent;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    z-index: 100;
+}
+
+.navbar a {
+    font-size: 16px;
+    color: #e4e4e4;
+    text-decoration: none;
+    font-weight: 500;
+    margin-right: 30px;
+}
+
+.navbar a::after {
+    content: '';
+    position: absolute;
+    left: 0;
+    bottom: -6px;
+    width: 100%;
+    height: 2px;
+    background: #e4e4e4;
+    border-radius: 5px;
+    transform: translateY(10px);
+    opacity: 0;
+    transition: .5s;
+}
+
+.navbar a:hover:after {
+    transform: translateY(0);
+    opacity: 1;
+}
+
+.search-bar {
+    width: 250px;
+    height: 45px;
+    background: transparent;
+    border: 2px solid #e4e4e4;
+    border-radius: 6px;
+    display: flex;
+    align-items: center;
+}
+
+.search-bar input {
+    width: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    color: #e4e4e4;
+    padding-left: 10px;
+
+}
+
+.search-bar input::placeholder {
+    color: #e4e4e4;
+
+}
+
+.search-bar button {
+    width: 40px;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+}
+
+.search-bar button i {
+    font-size: 22px;
+    color: #e4e4e4;
+}
+
+.background {
+    width: 100%;
+    height:100vh;
+    background: url('https://i0.wp.com/neptune.ai/wp-content/uploads/2022/07/blog_feature_image_034270_4_2_1_9.jpg') no-repeat;
+    background-size: cover;
+    background-position: center;
+    filter: blur(10px);
+
+}
+
+.container {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 75%;
+    height: 550px;
+    background: url('https://i0.wp.com/neptune.ai/wp-content/uploads/2022/07/blog_feature_image_034270_4_2_1_9.jpg?fit=1200%2C630&ssl=1') no-repeat;
+    background-size: cover;
+    background-position: center;
+    border-radius: 10px;
+    margin-top: 20px;
+}
+
+.container .content {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 58%;
+    height: 100%;
+    background: transparent;
+    padding: 80px;
+    color: #e4e4e4;
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+
+}
+.content .logo {
+    font-size: 30px;
+    font-stretch: expanded;
+}
+.logo a:hover i {
+    transform: scale(1.2);
+}
+
+.welcome:hover i {
+    transform: scale(1.2);
+}
+
+.text-sci h2 {
+    font-size: 40px;
+    font-stretch: expanded;
+    line-height: 1;
+}
+
+.text-sci h2 span {
+    font-size: 25px;  
+    font-stretch: expanded;
+
+}
+
+.text-sci p {
+    font-size: 16px;
+    font-stretch: expanded;
+    margin: 20px 0;
+}
+
+.text-sci h2:hover {
+    transform: scale(1.2);
+    
+}
+
+.social-icons a i {
+    font-size: 22px;
+    color: #e4e4e4;
+    margin-right: 10px;
+    transition: .5s ease;
+}
+
+.social-icons a:hover i {
+    transform: scale(1.2);
+}
+
+.container .logreg-box {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: calc(100% - 65%);
+    height:  100%;
+}
+
+.logreg-box .form-box {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width:  100%;
+    height: 100%;
+    background: transparent;
+    backdrop-filter: blur(5px);
+    border-top-right-radius: 5px ;
+    border-bottom-right-radius: 5px ;
+    color: #e4e4e4;
+}
+
+.form-box h2{
+    font-size: 40px;
+    font-stretch: expanded;
+    text-align: center;
+}
+
+.form-box .input-box {
+    position: relative;
+    width: 340px;
+    height: 50px;
+    border-bottom: 2px solid #e4e4e4;
+    margin: 30px 0;
+
+}
+
+.input-box input {
+    width: 100%;
+    height: 100%;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 15px;
+    color: #eeeaf4;
+    font-weight: 500;
+    padding-right: 28px ;
+
+}
+
+.input-box label {
+    position: absolute;
+    background: transparent;
+    top:50%;
+    left: 0;
+    line-height: 1;
+    transform: translate(-50%);
+    font-size: 16px;
+    font-weight: 500;
+    pointer-events: none;
+    transition: .5s ease;
+
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+   
+    top: -5px;
+}
+
+
+
+.input-box .icon {
+    position: absolute;
+    line-height: 1;
+    top: 23px;
+    right: 0;
+    font-size: 19px;
+
+}
+
+.remember-forgot {
+    font-size: 14.5px;
+    font-weight: 500;
+    margin: -15px 0 15px;
+    display: flex;
+
+}
+
+.remember-forgot label input {
+    accent-color: #e4e4e4;
+    margin-right: 3px   ;
+}
+
+.btn {
+    width: 100%;
+    height: 45px;
+    background:rgb(34, 29, 29);
+    border: none;
+    outline: none;
+    border-radius: none;
+    /* cursor: pointer;  */
+    font-size: 16px;
+    color: #e4e4e4;
+    font-weight: 0 0 10px rgba(0, 0, 0, .5);
+    
+    
+
+}
+.btntext :hover {
+    transform: scale(1.2);
+    
+}
+</style>
+<body>
+
+    <header class = "header">
+        <nav class="navbar">
+            <a href="#">Home</a>
+            <a href="#">About</a>
+            <a href="#">Services</a>
+            <a href="#">Contacts</a>
+            
+        </nav>
+        <form action="#" class="search-bar">
+            <input type="text" placeholder="Search...">
+            <button type="submit"><i class='bx bx-search'></i></button>
+        </form>
+    </header>
+    
+    <div class="background"></div>
+
+    <div class="container">
+        <div class="content">
+            <h2 class="logo"><i class='bx bxl-firebase' ></i>4Ninja</h2>
+
+            <div class="text-sci">
+                <h2 >Welcome!<br><span>To our Casting Model</h2>
+
+                <p>This project 
+                    explores automation of visual inspection with computer vision.</p>    
+
+                 <div class = 'social-icons'>
+                    <a href="#"><i class='bx bxl-linkedin' ></i></a>
+                    <a href="#"><i class='bx bxl-facebook-circle' ></i></a>
+                    <a href="#"><i class='bx bxl-instagram' ></i></a>
+                    <a href="#"><i class='bx bxl-twitter' ></i></a>
+
+                 </div>
+
+            </div>   
+        </div>
+
+            <div class="logreg-box">
+                <div class="form-box login">
+                    <form action="/LOGIN" method="post">
+                        <h2>Log In</h2>  
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-face-mask' ></i></span>
+                            <input id="name" type="text" class="form-control" name="username" required = "required">
+                            <label>&emsp;&emsp;&emsp;Name</label>
+                        </div>
+
+                        <div class="input-box">
+                            <span class="icon"><i class='bx bxs-envelope'></i></span>
+                            <input input id="email" type="text" class="form-control" name="email"  required = "required">
+                            <label>&emsp;&emsp;&emsp;Email</label>
+                        </div>
+
+                        <div class="remember-forgot">
+                            <label><input type="checkbox">Remember me</label>
+                            
+                        </div>
+
+                        <button type="submit" class="btn">Login</button>
+                    </form>
+                        
+                </div>
+            </div>
+                
+    </div>
+
+            
+        
+
+        
+
+</body>
+</html>
